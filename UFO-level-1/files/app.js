@@ -42,12 +42,8 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  // Print the value to the console
   
-
-  function filterCityPop(dt) {
-    return dt.datetime = inputValue;
-    console.log(inputValue)
-  };
-
+  var DTUFOs = data.filter(UFOReport => UFOReport.datetime === inputValue);
+  
+  return DTUFOs
 };
