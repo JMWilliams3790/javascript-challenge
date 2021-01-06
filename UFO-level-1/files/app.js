@@ -45,7 +45,7 @@ function runEnter() {
   
   var DTUFOs = tableData.filter(UFOReport => UFOReport.datetime === inputValue);
   
-  console.log(inputValue)
+  console.log(DTUFOs)
 
   return DTUFOs
 };
