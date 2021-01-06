@@ -43,7 +43,7 @@ function runEnter() {
   var inputValue = inputElement.property("value");
 
   
-  var DTUFOs = data.filter(UFOReport => UFOReport.Date === inputValue);
+  var DTUFOs = tableData.filter(UFOReport => UFOReport.datetime === inputValue);
   
   console.log(inputValue)
 
