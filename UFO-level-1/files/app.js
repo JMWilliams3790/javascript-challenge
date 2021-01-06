@@ -6,7 +6,7 @@ var tbody = d3.select("tbody");
 
 
 
-data.forEach(function(UFOReport) {
+tableData.forEach(function(UFOReport) {
   
   var row = tbody.append("tr");
   Object.entries(UFOReport).forEach(function([key, value]) {
@@ -44,8 +44,23 @@ function runEnter() {
 
   
   var DTUFOs = tableData.filter(UFOReport => UFOReport.datetime === inputValue);
-  
+  tbody.text("");
+
+
   console.log(DTUFOs)
+  var row = tbody.append("tr");
+
+  tableData.forEach(function(filler) {
+  
+    var row = tbody.append("tr");
+    Object.entries(DTUFOs).forEach(function([key, value]) {
+      
+      // Append a cell to the row for each value
+      // in the weather report object
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
 
   return DTUFOs
 };
