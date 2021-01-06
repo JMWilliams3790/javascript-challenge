@@ -43,8 +43,11 @@ function runEnter() {
   var inputValue = inputElement.property("value");
 
   // Print the value to the console
-  console.log(inputValue);
-
   
+
+  function filterCityPop(dt) {
+    return dt.datetime = inputValue;
+    console.log(inputValue)
+  };
 
 };
