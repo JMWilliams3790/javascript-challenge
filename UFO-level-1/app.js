@@ -4,13 +4,13 @@ var tableData = data;
 // YOUR CODE HERE!
 var tbody = d3.select("tbody");
 
-console.log(data);
+
 
 data.forEach(function(UFOReport) {
-  console.log(UFOReport);
+  
   var row = tbody.append("tr");
   Object.entries(UFOReport).forEach(function([key, value]) {
-    console.log(key, value);
+    
     // Append a cell to the row for each value
     // in the weather report object
     var cell = row.append("td");
@@ -19,11 +19,12 @@ data.forEach(function(UFOReport) {
 });
 
 
+
 // Select the button
-var button = d3.select("#button");
+var button = d3.select("#filter-btn");
 
 // Select the form
-var form = d3.select("#form");
+var form = d3.select("#datetime");
 
 // Create event handlers for clicking the button or pressing the enter key
 button.on("click", runEnter);
@@ -44,7 +45,6 @@ function runEnter() {
   // Print the value to the console
   console.log(inputValue);
 
-  // Set the span tag in the h1 element to the text
-  // that was entered in the form
-  d3.select("h1>span").text(inputValue);
-}
+  
+
+};
