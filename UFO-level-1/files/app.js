@@ -6,7 +6,9 @@ var tbody = d3.select("tbody");
 
 
 
-tableData.forEach(function(UFOReport) {
+function drawTable(UFOdata){
+  tbody.text("");
+  UFOdata.forEach(function(UFOReport) {
   
   var row = tbody.append("tr");
   Object.entries(UFOReport).forEach(function([key, value]) {
@@ -16,23 +18,23 @@ tableData.forEach(function(UFOReport) {
     var cell = row.append("td");
     cell.text(value);
   });
-});
-
+});}
+drawTable(tableData);
 
 
 // Select the button
 var button = d3.select("#filter-btn");
 
 // Select the form
-var form = d3.select("#datetime");
+var form = d3.select("form");
 
 // Create event handlers for clicking the button or pressing the enter key
 button.on("click", runEnter);
-form.on("change", runEnter);
+form.on("submit", runEnter);
 
 // Create the function to run for both events
 function runEnter() {
-
+  console.log("runEnter");
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -44,23 +46,12 @@ function runEnter() {
 
   
   var DTUFOs = tableData.filter(UFOReport => UFOReport.datetime === inputValue);
-  tbody.text("");
 
 
-  console.log(DTUFOs)
-  var row = tbody.append("tr");
 
-  tableData.forEach(function(filler) {
   
-    var row = tbody.append("tr");
-    Object.entries(DTUFOs).forEach(function([key, value]) {
-      
-      // Append a cell to the row for each value
-      // in the weather report object
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
 
-  return DTUFOs
+  drawTable(DTUFOs);
+  
+  
 };
